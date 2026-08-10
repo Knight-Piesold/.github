@@ -1,0 +1,13 @@
+name: wiki-me
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review, labeled, unlabeled]
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+  statuses: write
+jobs:
+  helper:
+    uses: Knight-Piesold/kp-github-wiki/.github/workflows/wiki-me-audit.yml@main
+    secrets: inherit
